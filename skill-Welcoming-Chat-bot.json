@@ -1,0 +1,324 @@
+{
+  "intents": [
+    {
+      "intent": "Greetings",
+      "examples": [
+        {
+          "text": "hi"
+        },
+        {
+          "text": "hello"
+        },
+        {
+          "text": "Good night"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Good afternoon"
+        },
+        {
+          "text": "Good evening"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Good_bye",
+      "examples": [
+        {
+          "text": "have a nice day"
+        },
+        {
+          "text": "good bye"
+        },
+        {
+          "text": "bye bye"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Good_bye1",
+      "examples": [
+        {
+          "text": "باي"
+        },
+        {
+          "text": "مع السلامة"
+        },
+        {
+          "text": "في امان الله"
+        },
+        {
+          "text": "باي باي"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thank1",
+      "examples": [
+        {
+          "text": "أشكرك"
+        },
+        {
+          "text": "شكرا"
+        },
+        {
+          "text": "شكرا جزيلا"
+        },
+        {
+          "text": "اشكرك"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Thank",
+      "examples": [
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "Thanks"
+        },
+        {
+          "text": "Greets ! Thanks"
+        },
+        {
+          "text": "Thank you !"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Greetings1",
+      "examples": [
+        {
+          "text": "السلام عليكم"
+        },
+        {
+          "text": "سلام"
+        },
+        {
+          "text": "سلام عليكم"
+        },
+        {
+          "text": "هاي"
+        },
+        {
+          "text": "صباح الخير"
+        },
+        {
+          "text": "مساء الخير"
+        },
+        {
+          "text": "مرحبا"
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "good_bye ",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Good bye "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Good_bye",
+      "dialog_node": "node_9_1595464723715",
+      "previous_sibling": "node_4_1595464783382"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1595463788225",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "Thank",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks ! "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thank",
+      "dialog_node": "node_10_1595464129486",
+      "previous_sibling": "node_2_1595464609861"
+    },
+    {
+      "type": "standard",
+      "title": "Thank1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "عفوا "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Thank1",
+      "dialog_node": "node_2_1595464609861",
+      "previous_sibling": "node_6_1595464650594"
+    },
+    {
+      "type": "standard",
+      "title": "good_bye1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "مع السلامة "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Good_bye1",
+      "dialog_node": "node_4_1595464783382",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greetings",
+      "dialog_node": "node_2_1595463788225",
+      "previous_sibling": "node_10_1595464129486"
+    },
+    {
+      "type": "standard",
+      "title": "Greetings1",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "و عليكم السلام , مساء النور "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#Greetings1",
+      "dialog_node": "node_6_1595464650594",
+      "previous_sibling": "node_9_1595464723715"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hello. How can I help you?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "off_topic": {
+      "enabled": true
+    },
+    "disambiguation": {
+      "prompt": "Did you mean:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Did you mean:"
+    },
+    "spelling_auto_correct": true
+  },
+  "learning_opt_out": false,
+  "name": "Welcoming Chat-bot",
+  "language": "en",
+  "description": ""
+}
